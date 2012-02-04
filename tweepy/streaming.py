@@ -172,7 +172,7 @@ class Stream(object):
         if self.running:
             raise TweepError('Stream object already connected!')
         self.url = '/2/user.json'
-        self.host='userstream.twitter.com'
+        self.host = 'userstream.twitter.com'
         if count:
             self.url += '&count=%s' % count
         self._start(async)
