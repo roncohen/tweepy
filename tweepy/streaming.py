@@ -146,7 +146,8 @@ class Stream(object):
                 break
 
             buf = ''
-            while True:
+            # loop while server is giving an OK status
+            while resp.status >= 200 and resp.status < 300:
                 c = resp.read(self.buffer_size)
                 idx = c.rfind('\n')
                 if idx > -1:
